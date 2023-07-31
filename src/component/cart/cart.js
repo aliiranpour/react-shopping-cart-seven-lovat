@@ -8,11 +8,12 @@ const Cart = ({ items }) => {
                 {items.length === 0 ? 'Cart is Empty' : `You have ${items.length} item(s) in the Cart`}
             </span>
             {items.map((item) => (
-                <div key={item.id}>
-                    <p>title: {item.description}</p>
-                    <p>price: {item.price}</p>
-                    <p>count: {item.count} </p>
-                    <img src={item.url} alt={item.description} />
+                <div key={item.id} className='cardcart'>
+                    <img src={item.url} alt={item.description} className='cartimg'/>
+                    <div className='infocart'>
+                        <p> {item.description}</p>
+                        <p>${item.price} * {item.count}</p>
+                    </div>
                 </div>
             ))}
         </div>
