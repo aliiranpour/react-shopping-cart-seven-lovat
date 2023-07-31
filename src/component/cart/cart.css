@@ -1,0 +1,16 @@
+.cart{
+    width: 30rem;
+    /* display: flex; */
+    justify-content: center;
+    margin-top: 20px;
+    /* margin-left: 40px; */
+    margin-bottom: 30px;
+}
+
+.carttitle{
+    width: 20rem;
+    height: 2.5rem;
+    width: 100%;
+    border-bottom: silver solid 0.1px;
+    font-size: 1.2rem;
+}
