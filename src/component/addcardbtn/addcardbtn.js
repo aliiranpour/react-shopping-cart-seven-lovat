@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const AddCardBtn = ({ item, addToCart }) => {
     
     const handleAddToCart = () => {
-        addToCart(item); // Call the addToCart function passed from the Card component
+        addToCart(item); 
     };
 
     return (

@@ -1,11 +1,15 @@
 import React from 'react'
 import './removebtn.css'
-const Removebtn = ({item}) => {
-    return (
-        <div className='rmvbtn'>
-            <button className='removebtn'>Remove</button>
-        </div>
+
+const Removebtn = ({ item, removeFromCart }) => {
+  const handleRemoveFromCart = () => {
+    removeFromCart(item);
+  };
+  return (
+    <div className='rmvbtn'>
+      <button className='removebtn' onClick={handleRemoveFromCart}>Remove</button>
+    </div>
   )
 }
 
-export default Removebtn
+export default Removebtn;
