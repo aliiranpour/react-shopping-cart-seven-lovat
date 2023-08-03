@@ -11,6 +11,9 @@
         width: fit-content;
     }
 }
+.sec-header{
+    width: 100%;
+}
 .cartpart{
     width: 40%;
 }

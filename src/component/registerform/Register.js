@@ -12,10 +12,26 @@ const Register = () => {
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
+              <div>
+                <label htmlFor='name' className='reg-label'>
+                  Name:
+                </label>
+                <Controller
+                  name='name'
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      type='text'
+                      className='reg-input'
+                      id='name'
+                      {...field}
+                      required
+                    />
+                  )}
+                />
+              </div>
         <div>
-          <label htmlFor='email' className='reg-label'>
-            Email:
-          </label>
+          <label htmlFor='email' className='reg-label'>Email:</label>
           <Controller
             name='email'
             control={control}
@@ -24,24 +40,6 @@ const Register = () => {
                 type='email'
                 className='reg-input'
                 id='email'
-                {...field}
-                required
-              />
-            )}
-          />
-        </div>
-        <div>
-          <label htmlFor='name' className='reg-label'>
-            Name:
-          </label>
-          <Controller
-            name='name'
-            control={control}
-            render={({ field }) => (
-              <input
-                type='text'
-                className='reg-input'
-                id='name'
                 {...field}
                 required
               />
