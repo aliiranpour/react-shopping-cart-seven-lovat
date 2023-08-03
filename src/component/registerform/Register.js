@@ -1,32 +1,77 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm, Controller } from 'react-hook-form';
 import './Register.css';
 
 const Register = () => {
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [address, setAddress] = useState('');
+  const { control, handleSubmit } = useForm();
 
-  const Checkoutmessage = () => {
-    alert(`Need to save order for ${name}`);
+  const onSubmit = (data) => {
+    alert(`Need to save order for ${data.name}`);
   };
 
   return (
     <div>
-      <div>
-        <label htmlFor='email' className='reg-label'>Email:</label>
-        <input type='email' className='reg-input' id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
-      </div>
-      <div>
-        <label htmlFor='name' className='reg-label'>Name:</label>
-        <input type='text' className='reg-input' id='name' value={name} onChange={(e) => setName(e.target.value)} />
-      </div>
-      <div>
-        <label htmlFor='address' className='reg-label'>Address:</label>
-        <input type='text' className='reg-input' id='address' value={address} onChange={(e) => setAddress(e.target.value)} />
-      </div>
-      <button className='checkbtn' onClick={Checkoutmessage}>Checkout</button>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div>
+          <label htmlFor='email' className='reg-label'>
+            Email:
+          </label>
+          <Controller
+            name='email'
+            control={control}
+            render={({ field }) => (
+              <input
+                type='email'
+                className='reg-input'
+                id='email'
+                {...field}
+                required
+              />
+            )}
+          />
+        </div>
+        <div>
+          <label htmlFor='name' className='reg-label'>
+            Name:
+          </label>
+          <Controller
+            name='name'
+            control={control}
+            render={({ field }) => (
+              <input
+                type='text'
+                className='reg-input'
+                id='name'
+                {...field}
+                required
+              />
+            )}
+          />
+        </div>
+        <div>
+          <label htmlFor='address' className='reg-label'>
+            Address:
+          </label>
+          <Controller
+            name='address'
+            control={control}
+            render={({ field }) => (
+              <input
+                type='text'
+                className='reg-input'
+                id='address'
+                {...field}
+                required
+              />
+            )}
+          />
+        </div>
+        <button type='submit' className='checkbtn'>
+          Checkout
+        </button>
+      </form>
     </div>
   );
-}
+};
 
 export default Register;
