@@ -1,5 +1,5 @@
 .clothpart{
-    width: 90%;
+    width: 100%;
 }
 @media(width > 800px){
     .sec-header{
@@ -11,7 +11,9 @@
         width: fit-content;
     }
 }
-
+.cartpart{
+    width: 40%;
+}
 .list{
     margin-top: 30px;
     display: flex;

@@ -1,0 +1,20 @@
+.reg-label{
+    display: block;
+    font-size: 1.2rem;
+}
+.reg-input{
+    margin: 10px;
+    width: 90%;
+    height: 2rem;
+}
+.checkbtn{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    background-color: #F0C041;
+    font-size: 1rem;
+    border: .01rem solid grey;
+    cursor: pointer;
+    width: 91.5%;
+    height: 3rem;
+    margin-top: 20px;
+    margin-left: 10px;
+}
